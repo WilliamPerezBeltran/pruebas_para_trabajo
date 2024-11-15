@@ -1,0 +1,23 @@
+.container-progressbar{
+	margin: 0 60px;
+}
+.row-odd{
+	background: #eaeaea;
+}
+.row-odd ,.row-even{
+	padding: 15px 0;
+}
+.row-odd .row,.row-even .row {
+	padding-left: 10px;
+}
+.language-dropdown-container {
+	margin-top: 20px;
+    margin-right: 12px;
+    display: none;
+}
+.btn-log-off{
+	margin-top: 25px;
+}
+.controls input+a, .controls a+a{
+	margin-left: 10px;
+}

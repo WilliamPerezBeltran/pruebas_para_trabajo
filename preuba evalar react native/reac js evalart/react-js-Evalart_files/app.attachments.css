@@ -1,0 +1,56 @@
+.allowattachment_content_box {
+	background-color: #ffffff;
+	border: .2rem solid #dddddd;
+	border-radius: 1rem;
+	margin-top: 0;
+	padding: 1rem;
+	position: relative;
+}
+
+.allowattachment_content_box > .droppable {
+	background-color: #ffffff;
+	border-radius: 1rem;
+	margin: -10px -10px -44px -10px;
+	min-height: 200px;
+	padding: 2rem 2rem 3.7rem 2rem;
+}
+
+.allowattachment_content_box > .droppable.highlight {
+	background-color: #efefef;
+}
+
+.allowattachment_content_box legend {
+	border: none;
+	font-size: 1.25rem;
+	font-style: italic;
+	left: 1rem;
+	line-height: 2.5rem;
+	padding: 1rem;
+	position: absolute;
+	top: 0;
+	width: auto;
+}
+
+.allowattachment_content_box legend span {
+	font-size: 1rem;
+	font-style: italic;
+}
+
+.allowattachment_list li {
+	padding: .5rem 0;
+}
+
+.allowattachment_list span.glyphicon-remove {
+	cursor: pointer;
+}
+
+.gly-spin {
+	-webkit-animation: spin 2s infinite linear;
+	-moz-animation: spin 2s infinite linear;
+	-o-animation: spin 2s infinite linear;
+	animation: spin 2s infinite linear;
+}
+
+.allowattachment_list span.glyphicon {
+	cursor: pointer;
+}

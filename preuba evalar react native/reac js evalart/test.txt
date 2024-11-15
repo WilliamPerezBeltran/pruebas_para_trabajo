@@ -1,0 +1,48 @@
+ReactJS genera tags HTML si el elemento esta en(escoja una de las siguientes):
+a.Primera letra en mayúscula y luego minúsculas.
+bMayúsculas
+c.Minúsculas
+d.Siempre, sin
+e.importar si es mayúscula o minúscula.
+
+¿Que API es necesaria para cualquier componente ReactJS(escoja una de las siguientes)?
+a.getInitialState
+b.ng-react
+c.initReact
+d.render
+
+
+Pregunta 7
+¿Cual de estas se utiliza en ReactJS para pasar datos del padre al hijo(escoja una de las siguientes)?
+a.state
+b.parenttochild
+c.pushinherit
+d.props
+
+
+
+
+¿Cual o cuales de los siguientes métodos se invocan en ReactJS antes de que el elemento se inserte en el DOM? 
+a. getInitialState 
+	
+b. getInitialState, componentWillMount 
+	
+c. getInitialState, componentDidMount 
+	
+d. componentWillMount 
+
+
+En ReactJS los PropTypes son usados para(escoja una de las siguientes):
+a.Generar etiquetas HTML
+b.Validación
+c.Definir tipos de prototipo
+d.Definir una mascara de
+e.edición
+
+
+
+En ReactJS, Cual de las siguientes se utiliza para generar una actualización en la interfaz de usuario:
+a.props
+b.state
+c.trigger
+d.update
