@@ -1,0 +1,807 @@
+<body><div id="skip-to-content-link-container"><a class="Button__LinkWrapper-sc-hbh4t9-2 fNoOdX has-min-width SkipToContent__StyledButton-sc-qtir4r-0 eWOMWW" role="link" tabindex="0" href="#working-area-editor" target="_self" rel="noopener noreferrer">Skip to editor</a></div>
+<div class="task-description__TaskContentWrapper-sc-380ibo-1 gHbVUV task-description-content"><p>Your task is to implement a React component that renders a text input field with auto-completion.</p>
+<img alt="example input box with autocompleted drop down list" src="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/autocomplete/static/demo.gif">
+<h3>Requirements</h3>
+<ol>
+<li>In order to fetch items based on the current query, you should send a GET request to the mocked
+<code>https://example.com/api/items</code> endpoint. The endpoint accepts a query parameter <code>q</code> that
+is meant to hold the query's value.</li>
+<li>The component should render a <code>div</code> element that has the class name <code>wrapper</code>
+and two child elements: a <code>div</code> element with the class name <code>control</code> and a <code>div</code> element
+with the class name <code>list</code>. The <code>div</code> element with class name <code>control</code> should contain an input
+element with the class name <code>input</code>, and this is the input in which the user enters a query.</li>
+<li>Once a response comes from the API, all strings from the response should be displayed inside
+the <code>div</code> tag with class name <code>list</code>, each one inside a separate <code>a</code> element with the
+class name <code>list-item</code>. The strings should be displayed in the same order as they arrived in
+from the API.</li>
+<li>You should avoid sending too many requests to the API; in particular, do not send requests on
+every single keypress! You are expected to properly <strong>debounce</strong> the requests. The debounce
+time-out should be <strong>500</strong> milliseconds.</li>
+<li>When items are being fetched, a class name <code>is-loading</code> should be added to the input's wrapper
+(the element with class name <code>control</code>).</li>
+<li>When items are being fetched, no request has been sent or the endpoint has returned zero items,
+the <code>div</code> element with class name <code>list</code> should not be rendered.</li>
+<li>The component accepts the prop <code>onSelectItem: (item: string) =&gt; void</code>, which should be called
+with an item when the user clicks on it. Clicking on an item does not have any effect apart from
+calling the callback.</li>
+<li>The component should be the default export and can be either a function or a class.</li>
+</ol>
+<h3>Assumptions</h3>
+<ul>
+<li><code>https://example.com</code> is a mocked service - it can be accessed only in the Codility UI.</li>
+<li>The mocked endpoint <code>https://example.com/api/items</code> returns an array of strings. The array's length is at most <strong>10</strong>.</li>
+<li>Assume that a request sent to the mocked endpoint <code>https://example.com/api/items</code> never fails.</li>
+<li>The "Preview" tab will display your component. You can use it for testing purposes. In preview
+mode, the API is mocked up, and will always return the same results, but in a random order. Also,
+the preview page imports a CSS spreadsheet from Bulma (v0.7.5) to give neat styling.</li>
+<li>Design/styling is not assessed and will not affect your score. You should focus only on
+implementing the requirements.</li>
+<li>The following imports are allowed:
+<ul>
+<li><code>react</code> (v16.9.0),</li>
+<li><code>classnames</code> (v2.2.6),</li>
+<li><code>lodash</code> (v4.17.14),</li>
+<li><code>axios</code> (v0.19.2).</li>
+</ul>
+</li>
+<li>Use <code>console.log</code> and <code>console.error</code> for debugging purposes via your browser's developer tools.</li>
+<li><strong>When using Axios you are expected to use <code>params</code> argument and not build the URL by hand (<a href="https://github.com/axios/axios#request-config">documentation</a>)</strong></li>
+</ul>
+<h3>Additional examples</h3>
+<h4>Example 1</h4>
+<p>Let's consider the following sequence of actions:</p>
+<ul>
+<li>The user types "q" into the input;</li>
+<li>After 50 ms the user presses "u", and then again, after every 50 ms, a new character is inserted until
+the input value is "query";</li>
+<li>Only one request to the API is sent, exactly 500 ms after "y" is inputted;</li>
+<li>During this period (from pressing "y" until the response comes in), the class name <code>is-loading</code>
+is added to the input's wrapper.</li>
+</ul>
+<h4>Example 2</h4>
+<p>If the response from the API endpoint is:</p>
+<pre><code class="language-json">["Italy", "Spain", "Portugal", "Macedonia"]
+</code></pre>
+<p>then the list section, which is rendered as follows:</p>
+<pre><code class="language-html">&lt;div class="list"&gt;
+  &lt;a class="list-item"&gt;Italy&lt;/a&gt;
+  &lt;a class="list-item"&gt;Spain&lt;/a&gt;
+  &lt;a class="list-item"&gt;Portugal&lt;/a&gt;
+  &lt;a class="list-item"&gt;Macedonia&lt;/a&gt;
+&lt;/div&gt;
+</code></pre></div></div></div></div></div></div>
+
+<style>
+  .verify .success { color: #000; }
+  .dark-theme .verify .success { color: #FFF; }
+
+  
+  .verify .success.compile-success { color: #058636; }
+  .dark-theme .verify .success.compile-success { color: #0a0; }
+
+  .verify .error { color: #e90000; }
+  .verify .note {
+    font-style: italic;
+  }
+  .verify .code {
+    font-weight: normal;
+    color: #737373;
+    white-space: pre-wrap;
+  }
+  .dark-theme .verify .code {
+    color: #9e9e9e;
+  }
+  .verify .comment {
+    white-space: pre-wrap;
+  }
+  .verify .section {
+    padding-left: 0.5em;
+    margin-left: 0.5em;
+    border-left: solid 3px black;
+  }
+  .verify .section.has-success { border-left-color: #000; }
+  .dark-theme .verify .section.has-success { border-left-color: #FFF; }
+
+  .verify .section.has-success.has-compile-success { border-left-color: #058636; }
+  .verify .section.has-error { border-left-color: #e90000; }
+
+  .dark-theme .section.has-success.has-compile-success { border-left-color: #0a0; }
+</style>
+
+<div class="verify">
+  <div class="section has-success has-compile-success">
+    
+      <div class="success compile-success" aria-label="Compiled successfully">Compilation successful.</div>
+      
+    
+  </div>
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution initial rendering the component should be rendered correctly</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toHaveLength(expected)<br><br>Expected length: 1<br>Received length: 2<br>Received object: [&lt;div class="control"&gt;&lt;input class="input" type="text" /&gt;&lt;/div&gt;, &lt;div class="list is-hoverable" /&gt;]<br>    at Object.toHaveLength (/task/solution.test.js:52:34)<br>    at Object.asyncJestTest (/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)<br>    at /node_modules/jest-jasmine2/build/queueRunner.js:43:12<br>    at new Promise (&lt;anonymous&gt;)<br>    at mapper (/node_modules/jest-jasmine2/build/queueRunner.js:26:19)<br>    at /node_modules/jest-jasmine2/build/queueRunner.js:73:41</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution sending requests and denouncing no request is sent 200ms after a query is typed in, but after next 300ms exactly one request is send</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toEqual(expected) // deep equality<br><br>Expected: 1<br>Received: 0<br>    at toEqual (/task/solution.test.util.js:39:29)<br>    at _callee2$ (/task/solution.test.js:81:7)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution sending requests and denouncing no request is sent 450ms after a query is typed in, but after next 50ms exactly one request is send</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toEqual(expected) // deep equality<br><br>Expected: 1<br>Received: 0<br>    at toEqual (/task/solution.test.util.js:39:29)<br>    at _callee3$ (/task/solution.test.js:97:7)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution sending requests and denouncing exactly one request is sent 500ms after a query is typed in</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toEqual(expected) // deep equality<br><br>Expected: 1<br>Received: 0<br>    at toEqual (/task/solution.test.util.js:39:29)<br>    at _callee4$ (/task/solution.test.js:109:7)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution sending requests and denouncing after: typing "q" in, 100ms passes by, appending "u", 450ms passes by no request is sent, but it is sending exactly one request after another 50ms</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toEqual(expected) // deep equality<br><br>Expected: 1<br>Received: 0<br>    at toEqual (/task/solution.test.util.js:39:29)<br>    at _callee5$ (/task/solution.test.js:126:7)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution sending requests and denouncing after: typing "q" in, 100ms passes by, typing "u" in, 450ms passes by, typing "e", 490 ms passes by, no request is send, but it is sending exactly one request after another 10ms</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toEqual(expected) // deep equality<br><br>Expected: 1<br>Received: 0<br>    at toEqual (/task/solution.test.util.js:39:29)<br>    at _callee6$ (/task/solution.test.js:145:7)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution sending requests and denouncing exactly one request is sent after: typing "q" in, 100ms passes by, typing "u" in, 500ms passes by</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toEqual(expected) // deep equality<br><br>Expected: 1<br>Received: 0<br>    at toEqual (/task/solution.test.util.js:39:29)<br>    at _callee7$ (/task/solution.test.js:162:7)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution sending requests and denouncing exactly one request is sent 500ms after user paste text into input</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toEqual(expected) // deep equality<br><br>Expected: 1<br>Received: 0<br>    at toEqual (/task/solution.test.util.js:39:29)<br>    at _callee8$ (/task/solution.test.js:176:7)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution sending requests and denouncing two requests are sent after: typing "q" in, 500ms passes by, typing "u" in, 550ms passes by</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toEqual(expected) // deep equality<br><br>Expected: 1<br>Received: 0<br>    at toEqual (/task/solution.test.util.js:39:29)<br>    at _callee9$ (/task/solution.test.js:189:7)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution `is-loading` class `is-loading` class is not added right after typing in a query, but it is after sending a request</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(element).toHaveClass("is-loading")<br><br>Expected the element to have class:<br>  is-loading<br>Received:<br>  control<br>    at toHaveClass (/task/solution.test.js:222:35)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution `is-loading` class `is-loading` class is added after sending a request</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(element).toHaveClass("is-loading")<br><br>Expected the element to have class:<br>  is-loading<br>Received:<br>  control<br>    at toHaveClass (/task/solution.test.js:234:35)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution `is-loading` class `is-loading` class is not present when response has come</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(element).toHaveClass("is-loading")<br><br>Expected the element to have class:<br>  is-loading<br>Received:<br>  control<br>    at toHaveClass (/task/solution.test.js:246:35)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution `is-loading` class `is-loading` class is not present after: typing "q" in, 100ms passes by, typing "u" in, 450ms passes by; but it is after next 50 ms</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(element).toHaveClass("is-loading")<br><br>Expected the element to have class:<br>  is-loading<br>Received:<br>  control<br>    at toHaveClass (/task/solution.test.js:270:37)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution `is-loading` class `is-loading` class is added after: typing "q" in, 100ms passes by, typing "u" in, 500ms passes by</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(element).toHaveClass("is-loading")<br><br>Expected the element to have class:<br>  is-loading<br>Received:<br>  control<br>    at toHaveClass (/task/solution.test.js:284:35)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution list content right after a query is typed in, the list section is not present</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toBeNull()<br><br>Received: &lt;div class="list is-hoverable" /&gt;<br>    at toBeNull (/task/solution.test.js:298:48)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution list content 300ms after a query is typed in, the list section is not present</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toBeNull()<br><br>Received: &lt;div class="list is-hoverable" /&gt;<br>    at toBeNull (/task/solution.test.js:312:48)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution list content after a request is sent, the list section is still absent</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toBeNull()<br><br>Received: &lt;div class="list is-hoverable" /&gt;<br>    at toBeNull (/task/solution.test.js:328:48)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution list content after a response comes in, the list section is already present</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toBeNull()<br><br>Received: &lt;div class="list is-hoverable" /&gt;<br>    at toBeNull (/task/solution.test.js:344:48)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution list content after a response comes in, the list section is in the right place</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toBeNull()<br><br>Received: &lt;div class="list is-hoverable" /&gt;<br>    at toBeNull (/task/solution.test.js:363:48)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution list content the list section is absent when the response consists of zero items</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toBeNull()<br><br>Received: &lt;div class="list is-hoverable" /&gt;<br>    at toBeNull (/task/solution.test.js:385:48)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution onSelectItem callback onSelectItem is called when the first item is clicked</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: Unable to find an element with the text: Afghanistan. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.<br><br>&lt;body&gt;<br>  &lt;div&gt;<br>    &lt;div<br>      class="wrapper"<br>    &gt;<br>      &lt;div<br>        class="control"<br>      &gt;<br>        &lt;input<br>          class="input"<br>          type="text"<br>        /&gt;<br>      &lt;/div&gt;<br>      &lt;div<br>        class="list is-hoverable"<br>      /&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/body&gt;<br>    at getElementError (/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:46:10)<br>    at /node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:100:13<br>    at /node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:83:17<br>    at getByText (/task/solution.test.js:407:27)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution onSelectItem callback user types the query in twice (each one triggers requesting the API) and then once all items are displayed, clicks at an item</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: Unable to find an element with the text: Afghanistan. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.<br><br>&lt;body&gt;<br>  &lt;div&gt;<br>    &lt;div<br>      class="wrapper"<br>    &gt;<br>      &lt;div<br>        class="control"<br>      &gt;<br>        &lt;input<br>          class="input"<br>          type="text"<br>        /&gt;<br>      &lt;/div&gt;<br>      &lt;div<br>        class="list is-hoverable"<br>      /&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/body&gt;<br>    at getElementError (/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:46:10)<br>    at /node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:100:13<br>    at /node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:83:17<br>    at getByText (/task/solution.test.js:434:29)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution onSelectItem callback onSelectItem is called twice when the two items are clicked</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: Unable to find an element with the text: Afghanistan. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.<br><br>&lt;body&gt;<br>  &lt;div&gt;<br>    &lt;div<br>      class="wrapper"<br>    &gt;<br>      &lt;div<br>        class="control"<br>      &gt;<br>        &lt;input<br>          class="input"<br>          type="text"<br>        /&gt;<br>      &lt;/div&gt;<br>      &lt;div<br>        class="list is-hoverable"<br>      /&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/body&gt;<br>    at getElementError (/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:46:10)<br>    at /node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:100:13<br>    at /node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:83:17<br>    at getByText (/task/solution.test.js:455:27)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution list items after a response comes in, there should be 10 list items</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toHaveLength(expected)<br><br>Expected length: 10<br>Received length: 0<br>Received object: []<br>    at toHaveLength (/task/solution.test.js:488:25)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)<br>    at /node_modules/@babel/runtime/helpers/asyncToGenerator.js:32:7<br>    at new Promise (&lt;anonymous&gt;)<br>    at Object.&lt;anonymous&gt; (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:21:12)<br>    at Object.asyncJestTest (/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)<br>    at /node_modules/jest-jasmine2/build/queueRunner.js:43:12<br>    at new Promise (&lt;anonymous&gt;)<br>    at mapper (/node_modules/jest-jasmine2/build/queueRunner.js:26:19)<br>    at /node_modules/jest-jasmine2/build/queueRunner.js:73:41</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+    <br>
+    
+      <div class="section has-error">
+    
+      
+        <span class="title">Solution list items after a response comes in, the list items should exactly match the response</span>
+        
+      
+      <br>
+
+      
+        Output (stderr):
+        <div class="code">Error: expect(received).toHaveClass()<br><br>received value must be an HTMLElement or an SVGElement.<br>Received has value: undefined<br>    at Object.throwingMatcher [as toHaveClass] (/node_modules/expect/build/index.js:342:33)<br>    at toHaveClass (/task/solution.test.js:497:22)<br>    at Array.forEach (&lt;anonymous&gt;)<br>    at forEach (/task/solution.test.js:495:16)<br>    at tryCatch (/node_modules/regenerator-runtime/runtime.js:45:40)<br>    at Generator.invoke [as _invoke] (/node_modules/regenerator-runtime/runtime.js:271:22)<br>    at Generator.prototype.&lt;computed&gt; [as next] (/node_modules/regenerator-runtime/runtime.js:97:21)<br>    at asyncGeneratorStep (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)<br>    at _next (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)<br>    at /node_modules/@babel/runtime/helpers/asyncToGenerator.js:32:7<br>    at new Promise (&lt;anonymous&gt;)<br>    at Object.&lt;anonymous&gt; (/node_modules/@babel/runtime/helpers/asyncToGenerator.js:21:12)<br>    at Object.asyncJestTest (/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)<br>    at /node_modules/jest-jasmine2/build/queueRunner.js:43:12<br>    at new Promise (&lt;anonymous&gt;)<br>    at mapper (/node_modules/jest-jasmine2/build/queueRunner.js:26:19)<br>    at /node_modules/jest-jasmine2/build/queueRunner.js:73:41</div>
+      
+      
+
+      
+
+        
+        
+          <span class="error">WRONG ANSWER</span>
+        
+        
+        <br>
+      
+    </div><!-- .section -->
+  
+  <br>
+
+  
+    
+      <div class="title summary error">
+        
+        
+        Detected some errors.
+      </div>
+    
+
+  
+</div>
+</div></div></div></div></div></div></div></div></div></div></div></div></div>
