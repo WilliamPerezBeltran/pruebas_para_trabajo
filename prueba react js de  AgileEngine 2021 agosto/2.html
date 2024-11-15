@@ -1,0 +1,67 @@
+<div style="height: 100%; position: relative;"><div id="standard_task_description" class="protected" style="height: 100%; overflow: auto; word-break: break-word;"><h2 class="mod-hidden">Task description</h2><div class="task-description__TaskContentWrapper-sc-380ibo-1 gHbVUV task-description-content"><p>Implement an infinitely scrolling list of country names in JavaScript using React Native Web.</p>
+<h3>Requirements</h3>
+<ol>
+<li>
+<p>You should implement a list that will render a single country name in each item.</p>
+</li>
+<li>
+<p>Initially, the list should be empty.</p>
+</li>
+<li>
+<p>Once the page loads you have to fetch initial data from the mocked up API endpoint. This endpoint is available under the <code>https://example.com/countries</code> address. Initially, the page should be populated with exactly <strong>20</strong> country names. In order to be able to specify which part of the data to fetch, you can use two supported query parameters:</p>
+<ul>
+<li><code>limit</code> – with this parameter, you can specify how many country entries you want to fetch</li>
+<li><code>offset</code> – with this parameter, you can specify from which element you want to start fetching.</li>
+</ul>
+<p>Here is an example. By calling HTTP GET on <code>https://example.com/countries?offset=5&amp;limit=5</code> you will receive exactly <strong>5</strong> elements starting from the <strong>6th</strong> element in the list of data and finishing on the <strong>10th</strong> element. The response is shown below; it should give you an idea of the data structure returned by the API in the response. The <code>results</code> property holds the list of currently returned elements you requested; the <code>count</code> property is the length of the list of elements in the API.</p>
+</li>
+</ol>
+<pre><code class="language-JSON">{
+  "results": [
+    { "name": "Brazil" },
+    { "name": "Nigeria" },
+    { "name": "Bangladesh" },
+    { "name": "Russia" },
+    { "name": "Mexico" }
+  ],
+  "count": 100
+}
+</code></pre>
+<ol>
+<li>When you scroll to the end of the list, you should trigger a consecutive data fetch and glue the new response to the end of the current list. So once you have the first <strong>20</strong> elements, you have to fetch the consecutive <strong>20</strong>. After everything is finished, you should end up with a list of <strong>40</strong> elements in total. Make sure to start fetching only when the list is about to end. To be precise let's say there's around enough content left to fill around 10% of the screen.</li>
+<li>When you fetch all of the data there is (the count returned from the API), you should not call the API for more data. It is because there is no more data to fetch. You also should not show activity indicator, since you are not waiting for any data to arrive.</li>
+<li>Every time you fetch data you should display a loader indicating that you are doing so. For that purpose, you can use <code>ActivityIndicator</code>. You are advised to place it in the list footer, but you can put it anywhere. When data is being fetched, the loader should be present. When data is not being fetched, the loader shouldn't appear in the component tree at all.</li>
+<li>You should ensure that the list item is 40px tall. Other aspects of styling won't be assessed, so feel free to style elements however you like, as long as this one condition is observed.</li>
+</ol>
+<h3>Assumptions</h3>
+<ol>
+<li>You can assume that the API never fails if you use it properly. You don't have to handle errors.</li>
+<li>The example.com API is available only in the preview and test runner; it is a mock-up, not a real server.</li>
+<li>You can use <code>console.log</code> and <code>console.error</code> for debugging purposes via your browser's developer tools.</li>
+</ol>
+<h3>Hints</h3>
+<ol>
+<li>The preview space will show you the effects of your work; you can test it there.</li>
+<li>Your solution will be tested in an iPhone 7/8/SE-sized browser viewport.</li>
+<li>You might want to consider using <code>FlatList</code> to prepare your solution.</li>
+<li>Your solution will be run using react-native-web, not regular mobile app renderer.</li>
+</ol>
+<h3>Available packages/libraries</h3>
+<p>You may use all of:</p>
+<ul>
+<li><code>React</code> – version <code>16.13.1</code></li>
+<li><code>ReactDOM</code> – version <code>16.13.1</code></li>
+<li><code>React Native for Web</code> – version <code>0.14.7</code></li>
+<li><code>React Native</code> – compatible with <code>0.63</code> through the above version of React Native for Web</li>
+<li><code>Axios</code> – version <code>0.20.0</code></li>
+<li>Built-in <code>XMLHttpRequest</code> and <code>fetch</code> APIs</li>
+</ul>
+<h3>Examples</h3>
+<h4>Example 1</h4>
+<p>As mentioned in the requirements, initially you should have no data and trigger fetching the data when the page loads. This means that initially, you should display only the <code>ActivityIndicator</code>.</p>
+<h4>Example 2</h4>
+<p>In order to fetch the initial 20 elements, you can call <code>https://example.com/countries?offset=0&amp;limit=20</code>. Once the initial data is loaded, you should immediately display it and hide the <code>ActivityIndicator</code> at the end of the list.</p>
+<h4>Example 3</h4>
+<p>Once you scroll to the end of the list, you should again show the <code>ActivityIndicator</code> and trigger the fetching of 20 consecutive elements. In order to fetch the next 20 elements, you should probably call <code>https://example.com/countries?offset=20&amp;limit=20</code>. After it resolves, you should update the list and hide the <code>ActivityIndicator</code> as in Example 2.</p>
+<h4>Example 4</h4>
+<p>When your list contains the number of elements returned in the <code>count</code> property from the API, after you scroll to the end of the list, you shouldn't call the API or show the <code>ActivityIndicator</code>.</p></div></div></div>

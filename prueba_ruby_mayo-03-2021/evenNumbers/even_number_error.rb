@@ -1,0 +1,2 @@
+class EvenNumberError < Exception
+end

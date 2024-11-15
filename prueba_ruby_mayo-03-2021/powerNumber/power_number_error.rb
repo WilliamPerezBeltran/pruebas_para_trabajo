@@ -1,0 +1,2 @@
+class PowerNumberError < Exception
+end
