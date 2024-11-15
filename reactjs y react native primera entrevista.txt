@@ -1,0 +1,2 @@
+1. ¿ que herramientas ha utilizado para testing en reactjs y react native ?
+2. ¿ que herramientas ha utilizado para integración continua ?

@@ -1,0 +1,5 @@
+
+que versiones de react native a utilizado ?
+
+explique que sistema de enrutamiento a utilizado en react native ?
+explique cuales sistema de enrutamiento a utilizado en react native ?

@@ -1,0 +1,294 @@
+
+❓ Question 1:
+
+22 = 22
+4433 = 2423
+13444 = 111334
+335553222 = 23351332
+33311222 = ?
+
+❓ Question 2:
+
+23 28 34 42 53 ?
+
+❓ Question 3:
+
+28 28 56 84 140 ?
+
+❓ Question 4:
+
+2 + 1 = 13
+9 + 2 = 711
+9 + 4 = 513
+8 + 3 = 511
+5 + 3 = ?
+
+❓ Question 5:
+
+f(0) = 0
+f(1) = 1
+f(n) = n - f(n-1) + f(n-2)
+
+❓ Question 6:
+
+suppose we have a language with 4 variables w, x, y, z. The variables always start at 0 and we have 9 instructions:
+
+ l marks the code with a given label so you can jump (back) to it
+ g goes to the given label
+ v sets a value to a variable, for example v x 4 assigns 4 to x
+ c compares the given values
+ ge goes to the given label if the result of the previous c operation was equal
+ gl goes to the given label if the first argument of the previous c operation is less than the second argument
+ gg goes to the given label if the first argument of the previous c operation is greater than the second argument
+ a adds two values and stores the result in the first argument. a x y adds x and y and stores the result in x
+ s substracts two values and stores the result in the first argument. s x y substracts x and y and stores the result in x
+
+v w 10
+v y 5
+l s
+a x 1
+s w 1
+s y 1
+c y 1
+ge o
+g s
+l o
+v z x
+a x y
+a x w
+
+What’s the value of x at the end?
+
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+
+Karen Garbot, [31/07/23 4:26 P. M.]
+👍🏻 Perfect. Now we're going to do a short test (no more than 15 minutes).
+
+🟡 When answering the question first write the answer and then write ":" and then add an explanation of your answer.
+Example:
+   Karen: 1 + 1 = ?
+   You: 2: it's a simple sum operation
+
+🟠 We recommend having paper and pencil if it makes thinking easier for you.
+
+🟣 We will evaluate the way how you explain your answer
+Write the explanation in any language you like (english, spanish, portuguese).
+
+🔵 Write everything in one line. The next question will appear after getting your response.
+
+🟢 Are you ready to start? we'll take into account the time you take to respond.
+
+Karen Garbot, [31/07/23 4:29 P. M.]
+❓ Question 1:
+
+22 = 22
+4433 = 2423
+13444 = 111334
+335553222 = 23351332
+33311222 = ?
+
+William Perez, [31/07/23 4:36 P. M.]
+8
+
+Karen Garbot, [31/07/23 4:36 P. M.]
+‼️ We're expecting your response in the form:
+ answer: explanation
+
+❓ 22 = 22
+4433 = 2423
+13444 = 111334
+335553222 = 23351332
+33311222 = ?
+
+William Perez, [31/07/23 4:37 P. M.]
+33322121
+
+Karen Garbot, [31/07/23 4:37 P. M.]
+‼️ We're expecting your response in the form:
+ answer: explanation
+
+❓ 22 = 22
+4433 = 2423
+13444 = 111334
+335553222 = 23351332
+33311222 = ?
+
+William Perez, [31/07/23 4:37 P. M.]
+33311222
+
+Karen Garbot, [31/07/23 4:37 P. M.]
+‼️ We're expecting your response in the form:
+ answer: explanation
+
+❓ 22 = 22
+4433 = 2423
+13444 = 111334
+335553222 = 23351332
+33311222 = ?
+
+William Perez, [31/07/23 4:38 P. M.]
+8:parece que cada numero del lado derecho reprenseta un conteo de digititos del numero de lado izquierdo
+
+Karen Garbot, [31/07/23 4:38 P. M.]
+❓ Question 2:
+
+23 28 34 42 53 ?
+
+William Perez, [31/07/23 4:43 P. M.]
+66: Se analiza la diferencia entre numeros consecutivos(28-23=5, 34-28=6.... etc) Y con esto su puede observar que va aumentando en numeros impares consecutivos (5,6,8,11) para encontrar el siguiente (11+2=13) por lo tanto el siguiente numero de la secuencia seria 53+13=66. El resultado de la secuencia es 23 28 34 42 53 66
+
+Karen Garbot, [31/07/23 4:43 P. M.]
+❓ Question 3:
+
+28 28 56 84 140 ?
+
+William Perez, [31/07/23 4:48 P. M.]
+168: Lo que yo hago es examinar las diferencias entre los números consecutivos (28 + 28 = 56, 56 + 28 = 84, 84 + 28 = 112) Y con este razonamiento se puedo ver que aumentan en 28 cada vez. Por lo tanto se el patron (112 + 28 = 140). La respuesta es 28 28 56 84 140 168
+
+Karen Garbot, [31/07/23 4:48 P. M.]
+❓ Question 4:
+
+2 + 1 = 13
+9 + 2 = 711
+9 + 4 = 513
+8 + 3 = 511
+5 + 3 = ?
+
+William Perez, [31/07/23 4:54 P. M.]
+28:Observe que cada ecuación tiene dos números en el lado izquierdo que se suma, y el resultado en el lado derecho es una concatenación de los dígitos de los dos números que se suman.
+El primer dígito es la resta de los digitos. 2 + 1 = 13 (están la operaciones 2-1=1 y 2+1=3) Por lo tanto se aplica el patrón que sería (5-3=2 y 5+3=8). El resultado seria 28.
+
+Karen Garbot, [31/07/23 4:54 P. M.]
+❓ Question 5:
+
+f(0) = 0
+f(1) = 1
+f(n) = n - f(n-1) + f(n-2)
+
+with f(5), how many times is f() invoked?
+
+William Perez, [31/07/23 5:00 P. M.]
+11:Dado:
+f(0) = 0
+f(1) = 1
+f(n) = n - f(n-1) + f(n-2)
+Calculemos f(5):
+f(5) = 5 - f(4) + f(3)
+Para encontrar f(4), necesitamos expandirlo aún más:
+f(4) = 4 - f(3) + f(2)
+Luego, para encontrar f(3), lo expandimos:
+f(3) = 3 - f(2) + f(1)
+Ahora, sabemos que f(1) = 1, y podemos usar esta información para calcular f(3):
+f(3) = 3 - f(2) + 1
+A continuación, encontremos f(2):
+f(2) = 2 - f(1) + f(0)
+Dado f(1) = 1 y f(0) = 0:
+f(2) = 2 - 1 + 0
+f(2) = 1
+Ahora, podemos calcular f(3):
+f(3) = 3 - 1 + 1
+f(3) = 3
+Ahora, podemos usar f(3) para encontrar f(4):
+f(4) = 4 - 3 + 1
+f(4) = 2
+Finalmente, podemos encontrar f(5):
+f(5) = 5 - 2 + 3
+f(5) = 6
+Entonces, f(5) es igual a 6, y para obtener este valor, la función f() fue invocada 11 veces.
+Aquí está el desglose de las invocaciones:
+f(5) invoca f(4) y f(3)
+f(4) invoca f(3) y f(2)
+f(3) invoca f(2) y f(1)
+f(2) invoca f(1) y f(0)
+Por lo tanto, la función f() se invoca 11 veces para calcular f(5).
+
+Karen Garbot, [31/07/23 5:00 P. M.]
+❓ Question 6:
+
+suppose we have a language with 4 variables w, x, y, z. The variables always start at 0 and we have 9 instructions:
+
+ l marks the code with a given label so you can jump (back) to it
+ g goes to the given label
+ v sets a value to a variable, for example v x 4 assigns 4 to x
+ c compares the given values
+ ge goes to the given label if the result of the previous c operation was equal
+ gl goes to the given label if the first argument of the previous c operation is less than the second argument
+ gg goes to the given label if the first argument of the previous c operation is greater than the second argument
+ a adds two values and stores the result in the first argument. a x y adds x and y and stores the result in x
+ s substracts two values and stores the result in the first argument. s x y substracts x and y and stores the result in x
+
+v w 10
+v y 5
+l s
+a x 1
+s w 1
+s y 1
+c y 1
+ge o
+g s
+l o
+v z x
+a x y
+a x w
+
+What’s the value of x at the end?
+
+William Perez, [31/07/23 5:19 P. M.]
+9: bueno aqui lo que tenemos que hacer es mirar que pasa con las cuatro variables de acuerdo a las reglas del juego (esta forma de programar se parece a programación funcional). Entonces analizamos las instrucciones dadas paso a paso para encontrar el valor final de la variable "x".
+
+v w 10 =>(w = 10, x = 0, y = 0, z = 0)
+
+v y 5 =>(w = 10, x = 0, y = 5, z = 0)
+
+l s: Marca el código con una etiqueta "s".
+
+a x 1 =>(w = 10, x = 1, y = 5, z = 0)
+
+s w 1 => (w = 9, x = 1, y = 5, z = 0)
+
+s y 1: => (w = 9, x = 1, y = 4, z = 0)
+
+c y 1: Compara si "y" es igual a 1. Como "y" es 4, la comparación es falsa.
+
+ge o: Salta a la etiqueta "o" si la comparación anterior (c y 1) fue igual. Sin embargo, como la comparación era falsa, no saltará.
+
+g s: salta a la etiqueta "s".
+
+Los pasos anteriores forman un bucle, que se repetirá hasta que se cumpla la condición especificada en la instrucción 7. En este caso, nunca se vuelve verdadero, por lo que el ciclo seguirá ejecutándose.
+
+En cada iteración del ciclo, ocurren las siguientes operaciones:
+
+Incrementar x en 1
+Decrementar w en 1
+Decrementar y en 1
+Mientras y siga siendo mayor que 1, el bucle seguirá funcionando.
+
+La simulacipon del bucle quedaria asi:
+Primera iteración:
+(w = 8, x = 2, y = 3, z = 0)
+Segunda iteración:
+(w = 7, x = 3, y = 2, z = 0)
+Tercera iteración:
+(w = 6, x = 4, y = 1, z = 0)
+Cuarta iteración:
+(w = 5, x = 5, y = 0, z = 0)
+Quinta iteración:
+(w = 4, x = 6, y = -1, z = 0)
+
+Dado que "y" se convierte en -1 después de la quinta iteración, el bucle terminará cuando la condición de la instrucción 7 (c y 1) se cumpla.
+A continuación, ejecutamos las instrucciones después de la etiqueta "o":
+l o => Marca el código con una etiqueta "o".
+v z x=> (w = 4, x = 6, y = -1, z = 6)
+
+a x y =>(w = 4, x = 5, y = -1, z = 6)
+
+a x w => (w = 4, x = 9, y = -1, z = 6)
+
+El ciclo se termina y la variable "x" es 9.
+
+Karen Garbot, [31/07/23 5:19 P. M.]
+Thanks! we've received your answers. We'll review and contact you shortly

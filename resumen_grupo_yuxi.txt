@@ -1,0 +1,206 @@
+prueba:
+
+	Aca les dejo la de fullstack
+	https://fullstacklabs.notion.site/Ruby-on-Rails-Coding-Challenge-5d9c09b5edb44fb1bec3aea5c7eb7590
+
+- Vairix
+- Moove IT
+- Hoy con Fullstack Labs
+- Mañana 7am con SoftServe(con un ukraniano)
+- Miercoles 1pm con AustinSoftware
+- En cualquier momento me agendan con Revelo para esta semana.
+
+recurso:
+	 https://www.executeprogram.com/courses
+
+
+ Excelente recurso para repasar patrones de diseño 
+
+https://refactoring.guru/es/design-patterns/catalog
+
+
+_______________________________________________________________________________________________________________________
+Están de acuerdo con estos pasos para optimizar el rendimiento de una aplicación en Rails? 
+que otros aspectos agregarían 
+
+1. Medir el performance
+Utilizar herramientas para obtener una medida cuantitativa del rendimiento de los diferentes aspectos de la aplicación para tener un punto de partida y un valor para comprobar si las acciones realizadas si están aumentando el performance.
+
+Tools: WebPage Test, PageSpeed Insights
+
+2. Ya identificados y medidos los elementos que necesitan optimización se puede empezar a intervenirlos. Estos elementos puede ser: 
+
+Server optimization:
+Increasing RAM capacity
+Replacing HDD with SSD
+Using a load balancing method
+Backend optimization:
+Keeping your code clean
+Working on query problems
+Verify N+1 issues
+Adding indexes
+Using background job processors
+Caching
+Using Ruby Garbage Colection Tuning
+Frontend optimization:
+Using a CDN
+Sharing static files
+Compressing the files
+
+Súper la info @Yuxi Rodrigo Ramírez para la parte del backend existen unas gemas geniales para identificar problemas de rendimiento como por ejemplo Bullet o RubyCritics
+_______________________________________________________________________________________________________________________
+como optimizaria una app que muestra contadores de registros asociados en rails?
+UD me lo dijo, agregando el _count en la BD, correcto?
+
+como se debe llamar el campo, a nivel de model que se hace?
+counter_cache?
+
+
+- Algoritmos
+- Estructuras de datos
+- Ruby on Rails
+- Ruby
+
+
+calcular el big o de un algoritmo corto 
+¿explicarpara que sirve big o?
+¿ explicar que es un antipatron?
+nombre almenos dos o tres estructuras de datos y explique su funcionanmiento  ?
+anidada, colas, y filas 
+
+Yo tengo una Clase y creo una instancia de esa clase y ejecuto la applicacion que genera nuevass instacias 
+¿como hago yo para coorrer ese mismo algoritmo y que esa instancia nuunca cambie de memoria?
+
+RTA: utilizando memorization si la variable variable instancia esta declarada o existe entonces se toma se objecto y si no se asigna una instancia nueva 
+entonces desde que la aplicacion este corriengo y este en memoria nunca va crear una nueva instancia 
+_______________________________________________________________________________________________________________________
+[8:15 a. m., 30/10/2022] Yuxi christian rojas: Recorde una pregunta:
+
+Cual es la importancia de Gemfile.lock y por que cuando contruimos una gem se debe ignorar del repo.
+[8:45 a. m., 30/10/2022] Yuxi Rodrigo Ramírez: El gemfile.lock bloquea la versión de las gemas y sus dependencias?
+[8:45 a. m., 30/10/2022] Yuxi christian rojas: Si,
+[8:46 a. m., 30/10/2022] Yuxi christian rojas: la otra pregunta fue por que una gema tiene que ignorar el gemfile.lob
+[8:46 a. m., 30/10/2022] Yuxi christian rojas: Gemfile.lock
+
+
+_______________________________________________________________________________________________________________________
+[8:50 a. m., 30/10/2022] Yuxi christian rojas: yo aca preparandome para la prueba de System design del martes, les voy a ir dejando links para que le den una mirada
+[8:50 a. m., 30/10/2022] Yuxi christian rojas: https://www.freecodecamp.org/news/systems-design-for-interviews/
+[8:51 a. m., 30/10/2022] Yuxi christian rojas: https://www.educative.io/blog/complete-guide-to-system-design
+
+System Design Primer ⭐️: How to start with distributed systems?
+https://www.youtube.com/watch?v=SqcXvc3ZmRU
+
+Impresionante contenido
+
+https://www.youtube.com/c/GauravSensei
+_______________________________________________________________________________________________________________________
+
+Buenos dias!, les dejo unos articulos geniales refernete a hooks en clases y modulos, herencia, etc..
+
+https://www.bigbinary.com/blog/extend-self-in-ruby
+
+https://medium.com/@leo_hetsch/ruby-modules-include-vs-prepend-vs-extend-f09837a5b073
+
+https://betterprogramming.pub/understanding-the-ruby-method-lookup-chain-d6f9d7997849
+
+
+_______________________________________________________________________________________________________________________
+
+Buen día panitas, mañana tengo una entrevista técnica (de pronto también tenga live code) y más o menos van a preguntarme esto:
+
+Conceptos Básicos de Ingeniería de Software, Ruby y Ruby on Rails, Metodologías Agiles,Seguridad de aplicaciones, Arquitectura orientada a Microservicios
+
+Para que lo tengan encuenta por si hay algo que no conozcan bien, les puede servir para alguna entrevista a uds
+_______________________________________________________________________________________________________________________
+
+
+[8:24 a. m., 1/11/2022] Yuxi christian rojas: les quiero comentar que podriamos hacer un grupo de estudio intenso para los que quieran certificarse en ruby silver
+[8:24 a. m., 1/11/2022] Yuxi christian rojas: en colombia se puede presentar la prueba presencial en bogota o en cali
+[8:25 a. m., 1/11/2022] Yuxi christian rojas: cuesta 150 USD cada vez
+[8:25 a. m., 1/11/2022] Yuxi christian rojas: son 50 preguntas, se pasa con 38
+_______________________________________________________________________________________________________________________
+
+Les voy dejando algunas de las preguntas de hoy:
+- Que es STI en Rails y como usarlo
+rta: 
+	https://medium.com/@GeneHFang/single-table-inheritance-in-rails-6-emulating-oop-principles-in-relational-databases-be60c84e0126
+- collect vs collect!
+- create vs create!
+- diferencia entre has_and_belongs_to_many vs has_many :through
+- En Rspec que es allow, stub the method, let vs let! shared_example
+- Que es LEFT JOIN
+- Herencia entre modules
+- Diferencia entre Class y Method
+- Explicar los hooks include, extend, prepend
+- Como exponer metodos de clase en un module sin declarar una clase
+- Que son los mix-in
+ Que es Active Record
+- Que es SOLID y dar un ejemplo
+rta: https://tejal-panjwani.medium.com/solid-principle-for-rails-fb3927784504
+- Que es HAVING en SQL
+- Que son las transactions en SQL
+- Diferencias entre SQL y No-SQL
+- Que es memoization y dar un ejemplo
+- Cual es librerias se usan para revisar la sintaxis de tu código en Ruby
+- Explique claramente que es CI y CD
+- Que es SCRUM
+- Que es Kanban
+- Como hace estimaciones en SCRUM
+- Cuales son las ceremonias de SCRUM y para que cada una.
+- Que es polimorfismo en Ruby
+- Que es polimorfismo en Ruby on Rails
+- Cuando usar y cuando no validaciones a nivel de modelo en Rails y por que? tenga en cuenta la escalabilidad y seguridad
+- Que es escalabilidad vertical y horizontal, cuales son los pros y contra de los dos y cual se debe usar si es que es solo uno de los dos(esta es tricky)
+- Existe herencia entre modulos?
+
+
+
+
+https://medium.com/@GeneHFang/single-table-inheritance-in-rails-6-emulating-oop-principles-in-relational-databases-be60c84e0126
+https://www.interviewbit.com/system-design-interview-questions/
+
+_______________________________________________________________________________________________________________________
+
+Muchachos les dejo por aca un ejercicio de calentamiento que me paso Revelo para la entrevista tecnica que tengo el viernes
+https://gist.github.com/christianrojas/b176b09a1805f7e2567cba8708b91ade
+_______________________________________________________________________________________________________________________
+
+Woowww impresionante recurso https://exercism.org/ ojala lo hubiera encontrado hace 3 semanas
+
+https://exercism.org/
+https://exercism.org/
+https://exercism.org/
+
+y es OpenSource
+_______________________________________________________________________________________________________________________
+
+Como me lo imagine, la prueba con Revelo(Guideline) fue dura pero 100% diferente a las demas
+
+https://gist.github.com/christianrojas/e2790f5d1411597a5a89a8053e172843
+_______________________________________________________________________________________________________________________
+En esta última entrevista me pregunto por esto y no tenía ni idea:
+
+kafka
+HashWithIndifferentAccess: esto es de rails 
+Arel : es un DSL es una propuesta diferente de active record para poder consumir o hacer peticiones a la base de datos 
+_______________________________________________________________________________________________________________________
+
+
+https://blog.appsignal.com/2022/11/09/how-to-scale-ruby-on-rails-applications.html
+
+_______________________________________________________________________________________________________________________
+https://drive.google.com/drive/folders/1nn2JC4WKP2vEGZr347NoWZYtM7iupjed
+_______________________________________________________________________________________________________________________
+
+
+soft skills: 
+https://www.youtube.com/watch?v=yhCYdp5KxMs&list=PLEmTTOfet46OzaeZctse4Khl79LSckGYw&ab_channel=DanLok
+https://www.youtube.com/watch?v=5v-wyR5emRw&ab_channel=DanLok
+_______________________________________________________________________________________________________________________
+
+preguntas que le hicieron a victor 
+
+1. si tengo un controlador aqui y quiero replicar una funcionalidad para todos los controladores ¿que haria?
+2. si tengo un metodo que es comun para 5 modelos ,¿como hago para no repetir ese metodo en todos los modelos ?
+3. de device: como extendia la funcionalidad a device 
