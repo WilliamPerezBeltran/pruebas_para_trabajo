@@ -1,0 +1,31 @@
+package com.codility.caching;
+
+import org.springframework.stereotype.Service;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.CachePut;
+
+@Service
+public class CachingArticlesService implements ArticlesService {
+
+    @Override
+    public Article getArticle(Long articleId) {
+        return null;
+    }
+
+    @Override
+    public void removeArticle(Long articleId) {
+
+    }
+
+    @Override
+    public void saveArticle(Article article) {
+
+    }
+
+    @Override
+    public Article updateLikes(Long articleId, int likes) {
+        return null;
+    }
+}
