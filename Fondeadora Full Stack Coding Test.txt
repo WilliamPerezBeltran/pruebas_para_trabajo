@@ -1,0 +1,40 @@
+pille, si después quiere echarse otro de práctica: 
+https://docs.google.com/document/d/10FE3urA2iEJXkwBjit9YC4Y0fEOTT_Ikn98_Vhr_tNQ/edit
+
+Fondeadora Full Stack Coding Test
+
+Task: URL Shortener
+
+A URL Shortener is a service that creates short aliases for URLs. It generates a shortcode for a URL and then redirects the user to the URL when that code is accessed. One example of such a service is https://bitly.com/.
+
+Your task is to create a service using Python 3 that has two endpoints:
+
+	*One accepts a URL via a POST request and returns a shortcode
+	*The other one accepts a shortcode via a GET request and redirects to the original URL
+
+You should also design and implement a simple UI that sends a URL to the first endpoint and shows the generated alias.
+
+What we’ll be evaluating
+
+	*You’re free to make any design decisions you consider necessary. Please use the project’s README to document those decisions and your reasoning behind them
+	*We expect you to have a clean, layered architecture and clean code
+	*We suggest you use a simple DB, such as SQLite; but again, you’re free to choose whatever technology you want
+	*Feel free to use any framework you want
+	*We want to see that you can implement a simple and clean UI (with clean markup) and connect it to a back-end service. For that reason, don’t worry too much about the visual design, you can use a 		CSS Framework to help you with that
+	*The code is tested and has decent test coverage
+	*Your usage of Git. Commit early and often! We want to see that you use your Git history as a means of documentation with clear commit messages. We’ll follow it to evaluate your coding process
+	*You write code in a consistent, clean style, and use tools to help you with that
+	*You document your app and the steps necessary to install it, run it, test it, etc.
+
+Bonus points
+
+	*If you use a modern JS Framework for the UI
+	*If you deploy your app to a server and share the link with us
+	*If that deployment is on Amazon AWS
+	*You provide Docker configuration files to easily install and deploy your app
+
+
+Submission
+
+Publish your code to a Git repo and share it with us (techjobs@fondeadora.com). We’re excited to see what you come up with!
+
