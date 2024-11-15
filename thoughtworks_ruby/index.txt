@@ -1,0 +1,30 @@
+El acceso al material del trabajo que debes revisar antes de la entrevista está aquí:
+
+Ruby: https://github.com/techops-recsys-lateral-hiring/joi-energy-ruby
+
+Recuerda que nuestro equipo de coordinación de entrevistas ha hecho un gran esfuerzo para poder agendar esta entrevista con uno de nuestros desarrolladores dándose el tiempo fuera de sus proyectos solo para conocerte.
+
+Por favor no faltes a tu entrevista, separa el espacio con tiempo para que tengas conexión a internet y sea un lugar tranquilo y por favor confirma tu asistencia.
+
+Recomendación (Opcional):
+
+Para esta dinámica puedes a utilizar Visual Studio Code como IDE y Live Share como plugin para hacer pairing, por favor tráelos instalados en tu computadora.
+
+Por favor asegúrate con anticipación que el código corra adecuadamente en tu computadora.
+
+
+for your preparation
+● Domain Driven Design and Domain Modeling
+	- https://www.dddcommunity.org/
+● Object Oriented Design
+	- https://www.geeksforgeeks.org/oops-object-oriented-design/
+● Solid Principles
+	- http://www.blackwasp.co.uk/SOLIDPrinciples.aspx
+● The Principles of OOD Principles of OOD
+	- http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
+● Testing strategy
+	- https://medium.com/@netxm/how-to-get-started-with-software-testing-9fa1ce4f2a64
+● Test Driven Development
+	- https://medium.com/hackernoon/introduction-to-test-driven-development-tdd-61a13bc92d92
+● How to disagree with someone successfully and still effectively communicate
+	- https://www.businessinsider.com/how-to-disagree-with-someone-in-a-tactful-respectful-way-2020-3?IR=T
