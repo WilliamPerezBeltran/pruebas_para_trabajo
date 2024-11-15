@@ -1,0 +1,16 @@
+
+
+buscar en mi gmail toda la informacion: lo puedo buscar por esto: "Thoughtworks: Confirmación entrevista
+"
+
+una prueba de programacion en parejas 
+
+
+Para esta dinámica puedes a utilizar Visual Studio Code como IDE y Live Share como plugin para hacer pairing, por favor tráelos instalados en tu computadora.
+
+Por favor asegúrate con anticipación que el código corra adecuadamente en tu computadora.
+
+Micaela Briones 
+She/Her
+Recruiting Coordinator
+Email	ariana.briones@thoughtworks.com
