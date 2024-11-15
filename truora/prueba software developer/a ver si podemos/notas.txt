@@ -1,0 +1,7 @@
+estas urls son websites para crear flujos con whatsapp 
+
+https://hilos.io/en/solutions/flows
+https://saysimple.com/whatsapp-flows/
+https://www.youtube.com/watch?v=zNCNTsGDbXM&ab_channel=Wati
+https://stackblitz.com/edit/dragflow?file=src%2Fapp%2Fapp.component.ts
+https://www.youtube.com/watch?v=9VO74HdCex0&ab_channel=geohot

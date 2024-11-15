@@ -1,0 +1,10 @@
+Data Salaries Analysis Challenge:
+Based on the data provided in the file "jobs.csv" answer the following questions. Note: Some cleaning may be required before performing the analysis.
+    1. What can you say about the salaries for data related jobs? How do they differ from one another based on the kind of data professional?
+    2. How do salaries compare across the different industries?
+    3. Is the location of the job/company relevant to the salary?
+    4. How different are the salaries based on: the size of a company, its revenue, its age and its ownership type?
+    5. Which are the most common tools required for a data job? Which are the best paid?
+    6. How does the rating of a company relate to the salaries?
+Please solve this using a Jupyter notebook, including the data cleaning process and sections answering the questions.
+**If you find an interesting additional insight you can add it as a bonus section.
