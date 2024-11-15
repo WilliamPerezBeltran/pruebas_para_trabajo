@@ -1,0 +1,31 @@
+Jeff Jones has recently been employed by ‘Flip Financials’ as a system administrator and is responsible for the management of their Linux environment. Jeff reports to the Head of Technology (Gordon Hollifield,) who has recently been preparing for and facilitating a technology audit with an independent auditor. Gordon has requested Jeff’s assistance with collating and preparing the audit evidence. In this simulation, you will be playing the role of Jeff:
+
+Hi Jeff,
+
+Each year we perform a privileged user access review across our entire environment. As part of the review, we need to check which users have the ability to elevate their privileges and make sure they’re appropriate. Can you please let me know which users, groups, and/or programs have authority to run as root on the prod web server?
+
+
+Many thanks
+
+Gordon
+
+Requirements:
+
+Please note this check sudo simulation is timed.
+
+The solution must be available at ~/answer
+
+
+
+
+
+
+
+			Instructions
+
+In this simulation you'll be responding to the following email:
+
+Hi,
+
+
+Each year we perform a privileged user access review across our entire environment. As part of the review, we need to check which users have the ability to elevate their privileges and make sure they’re appropriate. Can you please let me know which users, groups, and/or programs have authority to run as root on the prod web server?

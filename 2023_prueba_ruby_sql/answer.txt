@@ -1,0 +1,1 @@
+con sudo -l  te permitirá listar los comandos permitidos y sus privilegios asociados para cada usuario y grupo y con eso podemos encontrar la respuesta 

@@ -1,0 +1,9 @@
+Which of the following options correctly transforms the given SQL query into Arel (Active Record) syntax to achieve the same result?
+You can assume that users and orders have an Association on orders.user_id.
+
+SELECT users.name, COUNT(orders.id) AS order_count
+FROM users
+JOIN orders ON users.id = orders.user_id
+WHERE orders.created_at >= '2023-01-01'
+GROUP BY users.name
+ORDER BY order_count DESC;

@@ -1,0 +1,53 @@
+You are working on a Ruby on Rails application that manages user profiles. You've been provided with a model and controller code for the Profile resource. The application allows users to create and edit their profiles. Please answer below:
+
+1. Identify any issues or potential bugs in the provided code.
+
+2. Suggest any improvements that could enhance the code's functionality or readability.
+
+
+3. Explain the purpose of the @profile variable and its usage throughout the controller methods.
+
+
+
+// Model Code (profile.rb)
+
+class Profile < ApplicationRecord
+  belongs_to :user
+
+  validates :first_name, presence: true, length: { maximum: 50 }
+  validates :last_name, presence: true, length: { maximum: 50 }
+  validates :bio, length: { maximum: 500 }
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+end
+
+// Controller Code (profiles_controller.rb)
+
+class ProfilesController < ApplicationController
+  def show
+    @profile = Profile.find(params[:user_id])
+  end
+
+  def edit
+    @profile = Profile.find(params[:user_id])
+  end
+
+  def update
+    @profile = Profile.find(params[:user_id])
+
+    if @profile.update(profile_params)
+      redirect_to user_profile_path(@profile.user, @profile), notice: "Profile updated successfully!"
+    else
+      flash.now[:alert] = "Failed to update profile."
+      render :edit
+    end
+  end
+
+  private
+
+  def profile_params
+    params.require(:profile).permit(:first_name, :last_name, :bio)
+  end
+end

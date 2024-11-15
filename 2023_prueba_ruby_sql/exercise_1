@@ -1,0 +1,19 @@
+Given the following Active Record query, write the equivalent SQL query:
+
+employees = Employee.joins(:departments)
+                   .where(departments: { location: 'New York' })
+                   .where("employees.salary > ?", 50000)
+                   .order("employees.last_name ASC")
+                   .select("employees.first_name, employees.last_name, departments.location")
+
+
+
+
+RTA
+
+SELECT employees.first_name, employees.last_name, departments.location
+FROM employees
+INNER JOIN departments ON employees.department_id = departments.id
+WHERE departments.location = 'New York'
+AND employees.salary > 50000
+ORDER BY employees.last_name ASC;
