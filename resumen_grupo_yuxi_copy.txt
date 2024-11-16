@@ -1,0 +1,22 @@
+	https://fullstacklabs.notion.site/Ruby-on-Rails-Coding-Challenge-5d9c09b5edb44fb1bec3aea5c7eb7590
+	 https://www.executeprogram.com/courses
+https://refactoring.guru/es/design-patterns/catalog
+https://www.youtube.com/watch?v=SqcXvc3ZmRU
+https://www.youtube.com/c/GauravSensei
+https://www.bigbinary.com/blog/extend-self-in-ruby
+https://medium.com/@leo_hetsch/ruby-modules-include-vs-prepend-vs-extend-f09837a5b073
+https://betterprogramming.pub/understanding-the-ruby-method-lookup-chain-d6f9d7997849
+
+	https://medium.com/@GeneHFang/single-table-inheritance-in-rails-6-emulating-oop-principles-in-relational-databases-be60c84e0126
+ https://tejal-panjwani.medium.com/solid-principle-for-rails-fb3927784504
+https://medium.com/@GeneHFang/single-table-inheritance-in-rails-6-emulating-oop-principles-in-relational-databases-be60c84e0126
+https://www.interviewbit.com/system-design-interview-questions/
+https://gist.github.com/christianrojas/b176b09a1805f7e2567cba8708b91ade
+https://exercism.org/
+https://exercism.org/
+https://exercism.org/
+https://gist.github.com/christianrojas/e2790f5d1411597a5a89a8053e172843
+https://blog.appsignal.com/2022/11/09/how-to-scale-ruby-on-rails-applications.html
+https://drive.google.com/drive/folders/1nn2JC4WKP2vEGZr347NoWZYtM7iupjed
+https://www.youtube.com/watch?v=yhCYdp5KxMs&list=PLEmTTOfet46OzaeZctse4Khl79LSckGYw&ab_channel=DanLok
+https://www.youtube.com/watch?v=5v-wyR5emRw&ab_channel=DanLok
