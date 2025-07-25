@@ -1,0 +1,85 @@
+Pregunta,Custom_RAG,Claude,Contexto,contextual_precision,contextual_recall,contextual_relevancy
+¿Cuáles son las dos piezas más importantes del equipamiento para aprender a identificar pájaros?,"Las dos piezas más importantes del equipamiento para aprender a identificar pájaros son un buen libro de pájaros o una guía de campo, y un par de binoculares.",Una buena guía de campo y un par de binoculares.,"La pieza más importante del equipamiento para aprender a
+identificar los pájaros es, probablemente, un buen libro de pájaros o
+una guía de campo. Lo segundo es un par de binoculares. Si sólo
+tienes un pequeño presupuesto, una guía de campo es más asequible
+y te colocará en el camino correcto mucho más rápido que teniendo
+sólo un par de binoculares. Muy pronto, sin embargo, querrás
+invertir en un par de binoculares, ya que la observación de pájaros a
+simple vista puede volverse rápidamente frustrante.",1.0,1.0,1.0
+¿Por qué las pinturas de aves en las guías de campo suelen ser más deseables que las fotografías?,"Las pinturas de aves en las guías de campo suelen ser más deseables que las fotografías porque un buen artista puede integrar todas las variaciones de iluminación y postura, mostrando cómo luce el pájaro típicamente. Esto permite una representación más precisa y detallada de las características clave de cada especie, lo que facilita la identificación de las aves, especialmente para principiantes","Porque un buen artista puede integrar todas las variaciones de iluminación y postura, mostrando cómo luce el pájaro típicamente.","
+Las Guías de campo contienen las descripciones de los pájaros que
+te permiten identificar el ave que estás mirando. Tendrás que elegir
+entre una guía que utilice fotografías y una que utilice pinturas de
+colores. Aunque muchos principiantes se sienten más atraídos por las
+guías con fotografías, unas pinturas exactas de los pájaros suelen ser
+más deseables porque un buen artista puede integrar todas las
+variaciones de iluminación y postura y mostrar cómo luce el pájaro
+típicamente. Tendrás que elegir una guía que cubra la región en que
+deseas observar a los pájaros. Algunas guías locales incluyen sólo las
+especies más comunes. Este enfoque hace que el proceso sea más
+fácil y a menudo es una buena manera de empezar. Sin embargo,
+estas pequeñas guías pueden llegar a ser frustrantes al utilizarlas
+cuando las aves que estés tratando de identificar no sean las más
+comunes. Otras guías incluyen todas las especies, raras y comunes.
+Pueden ser muy confusas para un principiante, pero prácticamente
+todas las especies que observes estarán en la guía.
+
+",0.0,1.0,1.0
+¿Cómo están organizadas la mayoría de las guías de campo de aves?,"La mayoría de las guías de campo de aves se organizan por grupos de aves relacionadas evolutivamente, llamadas familias. Estas familias se colocan juntas en la guía en función de su historia evolutiva, desde las más antiguas hasta las más recientes evolutivamente. Dentro de una familia, las especies de aves que comparten aspectos aún más similares se colocan juntas en un grupo más pequeño denominado género.","Por grupos de aves relacionadas evolutivamente, llamadas familias, que se colocan juntas en un orden filogenético.","Una vez que tengas una guía, tienes que encontrar al pájaro que estés
+observando en la guía. No tendría ningún sentido ordenar la guía por
+orden alfabético, ya que no conoces el nombre del pájaro. En
+cambio, la mayoría de las guías se organizan por grupos de aves
+relacionadas evolutivamente, nombradas familias, que se colocan
+juntas.
+Oye, ¡los pájaros en el libro
+no están en orden
+alfabético! ¿Qué pasa?
+Por ejemplo, la familia del somorgujo, la familia de la curruca o la
+familia del pato comparten estructuras de formas y comportamientos
+similares, ya que están estrechamente relacionadas. Las familias se
+ordenan en la guía en función de su historia evolutiva, desde las más
+antiguas evolutivamente, como las de los somorgujos, hasta las más
+recientes evolutivamente, como las de los gorriones y los mirlos.
+Esto se denomina orden filogenético.
+Es muy útil aprender algo sobre las diferentes características de las
+familias y el orden en que se colocan en el libro antes de ir al campo.
+Familiarízate con lo que hace peculiar a los miembros de cada
+familia. La mayoría de las guías de campo tendrán una lista de las
+familias, o unas páginas codificadas por colores para ayudarte a
+encontrar a las familias de aves que estés buscando. Dentro de una
+familia, las especies de aves que comparten aspectos aún más
+similares se colocan juntas, en un grupo más pequeño denominado
+género (géneros pleurales).
+Esto significa que las 700 o más especies de una guía de campo
+sobre pájaros de América del Norte están agrupadas en unos 300
+géneros, dentro de 80 familias. Las guías más locales, por supuesto,
+tienen menos opciones.",1.0,1.0,1.0
+¿Qué potencia de magnificación se recomienda para los binoculares de un principiante en la observación de aves?,Se recomienda que los principiantes en la observación de aves utilicen binoculares con una potencia de magnificación de 7 u 8.,Se recomienda una potencia de 7 u 8.,"Los binoculares aumentarán en gran medida tu disfrute durante la
+observación de los pájaros y facilitarán la identificación, al brindarte
+una imagen en primer plano de las aves. Sin embargo, hay cientos de
+variaciones de prismáticos disponibles en la actualidad y no todos
+son adecuados para la observación de las aves. Para un principiante,
+las opciones se pueden reducir con relativa facilidad. Estos son los
+elementos simples a tener en cuenta:
+Potencia de magnificación -
+Todos los binoculares vienen con dos números separados por una
+""x"", como 8 x 30 o 10 x 50. El primer número es la potencia de
+magnificación de los prismáticos. Un ave u otro objeto aparecerán 8
+ó 10 veces más cerca, dependiendo de la potencia de magnificación.
+Las potencias más altas dan vistas más cercanas de las aves, pero son
+difíciles de mantener estables y te muestran un campo de visión más
+pequeño, por lo que resulta más difícil encontrar el ave. La mayoría
+de los principiantes obtendrían mejores resultados con un par de
+prismáticos de 7 u 8 de potencia.",1.0,1.0,1.0
+¿Cómo se calcula el tamaño de la pupila de salida en los binoculares?," Para calcular el tamaño de la pupila de salida en los binoculares, se divide el tamaño de la lente del objetivo por la potencia de magnificación de los prismáticos. Por ejemplo, si tienes unos binoculares con una lente de objetivo de 35 mm y una potencia de magnificación de 7x, la pupila de salida sería de aproximadamente 5 mm (35 mm / 7x = 5 mm).",Se divide el tamaño de la lente del objetivo por la potencia de magnificación de los prismáticos.,"El segundo número, como 35 ó 50 después de la ""x,"" es una medida
+de la amplitud de cada lente en milímetros. Un objetivo más amplio
+recoge más luz, pero también hace que un binocular sea más grande,
+y más pesado. Muchos principiantes se sienten atraídos por los
+prismáticos compactos como los de 8 x 20, ya que son muy
+pequeños. Sin embargo, estos prismáticos no reúnen suficiente luz.
+Recomendamos los prismáticos con una lente de 35-42 mm. Los
+binoculares comúnmente disponibles son de 7 x 35 y 8 x 42, y estas
+son muy buenas opciones. Para calcular el tamaño de la pupila de
+salida, se divide el tamaño de la lente del objetivo por la potencia de
+magnificación de los prismáticos.",1.0,1.0,1.0

@@ -1,0 +1,20 @@
+# Usamos python3 
+FROM python:3.10
+
+# Se configura el directorio
+WORKDIR /app
+
+# se ubican los requerimientos
+COPY requirements.txt .
+
+# se instalan las dependencias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# se copia el resto
+COPY . .
+
+# se expone al puerto 8051
+EXPOSE 8501
+
+# se corre la aplicacion
+CMD ["streamlit", "run", "streamlit_example.py"]

@@ -1,0 +1,44 @@
+claude_ground_truth = {
+    "preguntas_respuestas": [
+        {
+            "pregunta": "¿Cuáles son las dos piezas más importantes del equipamiento para aprender a identificar pájaros?",
+            "respuesta": "Una buena guía de campo y un par de binoculares."
+        },
+        {
+            "pregunta": "¿Por qué las pinturas de aves en las guías de campo suelen ser más deseables que las fotografías?",
+            "respuesta": "Porque un buen artista puede integrar todas las variaciones de iluminación y postura, mostrando cómo luce el pájaro típicamente."
+        },
+        {
+            "pregunta": "¿Cómo están organizadas la mayoría de las guías de campo de aves?",
+            "respuesta": "Por grupos de aves relacionadas evolutivamente, llamadas familias, que se colocan juntas en un orden filogenético."
+        },
+        {
+            "pregunta": "¿Qué potencia de magnificación se recomienda para los binoculares de un principiante en la observación de aves?",
+            "respuesta": "Se recomienda una potencia de 7 u 8."
+        },
+        {
+            "pregunta": "¿Cómo se calcula el tamaño de la pupila de salida en los binoculares?",
+            "respuesta": "Se divide el tamaño de la lente del objetivo por la potencia de magnificación de los prismáticos."
+        },
+        {
+            "pregunta": "¿Qué problema pueden causar los binoculares mal alineados?",
+            "respuesta": "Pueden causar visión doble, fatiga visual y dolores de cabeza."
+        },
+        {
+            "pregunta": "¿Qué tipo de ropa se debe evitar al ir a observar aves?",
+            "respuesta": "Se deben evitar colores brillantes, incluyendo el blanco, y ropa ruidosa con tirantes de velcro."
+        },
+        {
+            "pregunta": "Además del color, ¿qué otras características son importantes para identificar aves?",
+            "respuesta": "El tamaño, la forma, el comportamiento, el hábitat y las vocalizaciones."
+        },
+        {
+            "pregunta": "¿Por qué es útil aprender los cantos de las aves comunes?",
+            "respuesta": "Porque las canciones y llamadas a menudo pueden ser mejores pistas para la identificación que las visuales, y porque facilitan el aprendizaje de cantos de otras especies por comparación."
+        },
+        {
+            "pregunta": "¿Qué se debe hacer antes de entrar en un terreno para observar aves?",
+            "respuesta": "Se debe asegurar de conocer las leyes estatales y locales con respecto a la propiedad pública y privada, y obtener permiso antes de entrar en terrenos privados."
+        }
+    ]
+}
